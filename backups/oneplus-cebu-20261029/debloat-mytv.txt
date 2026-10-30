@@ -1,0 +1,55 @@
+# OnePlus TV (model C00, codename Cebu), Android TV 11 (API 30), firmware RTM8.240401.135, India.
+# Customized from examples/oneplus-tv-cebu/debloat.txt for this unit on 2026-10-29.
+#
+# Apply:   TV_HOST=192.168.0.105 tools/disable.sh backups/oneplus-cebu-20261029/debloat-mytv.txt
+# Undo:    TV_HOST=192.168.0.105 tools/restore.sh backups/oneplus-cebu-20261029/debloat-mytv.txt
+# Everything is DISABLED, not uninstalled. Comment out any line to keep it; re-run restore to re-enable.
+#
+# KEPT BY CHOICE (commented out below): all casting/mirroring (Chromecast, Miracast, TV Mirror,
+# OnePlus Connect), USB media apps (file browser, gallery, music, video), Bluetooth speaker mode,
+# Spotify. Also kept (always): partner customizer, HDMI/tuner stack, Live TV, remote + keyboard,
+# hot keys, Assistant, firmware updates, Play Store/Services.
+
+# Telemetry and diagnostics
+com.google.android.feedback                  # Google feedback agent
+com.heytap.mcs                               # HeyTap push messaging, with nearx tracking
+com.heytap.tv.remotediagnosing               # HeyTap remote diagnosis
+com.heytap.rom.service                       # ROM log collector and uploader
+com.heytap.tv.remotecontrolinspect           # Remote-control diagnostics app
+
+# OnePlus content, recommendation rows, auto-installs and preloaded extras
+com.oneplus.tv.launcher                      # OxygenPlay content page
+com.google.android.tvrecommendations         # Stock home recommendation rows
+android.autoinstalls.config.OnePlus          # Play auto-installs config
+com.coloros.relax.tv                         # "Relax" ambient sounds app, with nearx tracking
+com.oneplus.tv.userguide                     # Built-in user guide
+com.heytap.tv.assistant.oneplus              # OnePlus TV Manager (cleaner, bandwidth alerts)
+com.oneplus.tv.screensaver                   # OnePlus screensaver (Google Ambient mode stays)
+
+# Low-value preloaded extras (not casting/USB/audio; reversible)
+oneplus.smarthome                            # OnePlus smart home control
+net.oneplus.weather                          # Weather
+com.heytap.tv.camera                         # Camera app
+
+# Streaming / preloaded apps off by choice (Spotify KEPT; reinstallable from Play Store)
+tv.airtel.xstream.tvapp                      # Airtel Xstream Play (not installed on this unit)
+com.google.android.youtube.tvmusic           # YouTube Music
+com.discoveryplus.tv.android                 # Discovery+ (not installed on this unit)
+video.laminar.tv.chaupal.android             # Chaupal (not installed on this unit)
+com.jio.media.stb.ondemand                   # JioCinema / JioTV
+com.jio.web.androidtv                        # JioPages browser
+com.google.android.videos                    # Google Play Movies & TV
+com.google.android.play.games                # Google Play Games
+
+# --- KEPT BY CHOICE (left enabled) ---
+# com.mediatek.android.leanbacklauncher.partnercustomizer # KEEP: stock-home Inputs/Wi-Fi icons
+# com.google.android.apps.mediashell          # KEEP: Chromecast built-in
+# com.heytap.optvmiracastservice              # KEEP: Miracast
+# com.heytap.ars.sink                         # KEEP: OnePlus TV Mirror
+# com.heytap.olink                            # KEEP: OnePlus Connect
+# com.heytap.tv.filebrowser                   # KEEP: File manager (USB)
+# com.heytap.tv.gallery3d                     # KEEP: Gallery (USB)
+# com.heytap.tv.musicplayer                   # KEEP: Music player (USB)
+# com.heytap.tv.videoplayer                   # KEEP: Video player (USB)
+# com.heytap.tv.btspeaker                     # KEEP: Bluetooth speaker mode
+# com.spotify.tv.android                      # KEEP: Spotify
